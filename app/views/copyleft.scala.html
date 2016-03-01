@@ -1,0 +1,20 @@
+@**************************
+ * copyleft Template File *
+ *                        *
+ **************************@
+@()
+
+<div id="copyleft">
+	@play.Play.application.configuration.getString("appName"), 
+	version @play.Play.application.configuration.getString("version"); 
+	CopyLeft 
+	<img 
+		border="0" 
+		src="@routes.Assets.at("images/Copyleft.png")" 
+		alt="CopyLeft" 
+		width="14" 
+		title=@play.Play.application.configuration.getString("appEmail")
+	 > 
+	@play.Play.application.configuration.getString("appYear") 
+	@play.Play.application.configuration.getString("appAuthor")	      
+</div>@* eof copyleft *@

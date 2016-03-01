@@ -1,0 +1,96 @@
+/*************************************************************************
+	                             Constants
+**************************************************************************/
+@appColor:      green; // use dark colors only!
+@nice:          19%;
+@light:         65%;
+@ten:           10px;
+
+@lightRed:      #fdd;
+@lightGreen:    #dfd;
+@lightBlue:     #ddf;
+
+@headerBgColor: @niceColor;
+@headerColor:   white;
+
+@bodyBgColor:   #eeE;
+@bodyColor:     black;
+
+@footerBgColor: @lightColor;
+@footerColor:   black;
+
+@contentWidth:  600px;
+@contentHeight: 425px;
+@navWidth:      60px;
+@pad:           5px;
+
+@footerHeight:  25px;
+
+/*************************************************************************
+                        OPERATIONS & COLOR FUNCTIONS
+**************************************************************************/
+@chartWidth:    (@contentWidth - 2*@pad - @navWidth);
+@niceColor:     lighten(@appColor, @nice);
+@lightColor:    lighten(@appColor, @light);
+@lightGray:     lighten(gray, @light);
+     
+/*************************************************************************
+	                              MIXINS
+**************************************************************************/
+
+/*************************************************************************
+	                              STYLES
+**************************************************************************/
+body {
+	background-color: @bodyBgColor;
+  font-family:      Helvetica, Arial, sans-serif;
+  width:            @contentWidth;
+  margin-left:      auto;
+  margin-right:     auto;  
+  padding: @pad;
+	
+	h5 { 
+		color: green;
+		margin: 0; 
+	}
+	
+	header {
+	  background-color: green;
+	  color: @lightGreen;
+	  text-align: center;
+	  padding: @pad;
+	}// eof header
+	
+	section {
+  	background-color: white;
+	  height: @contentHeight;
+	  width:  @contentWidth;
+	  
+		nav {
+		  width: @navWidth;
+	    padding: @pad;		  
+		  float: left;
+		}
+		
+		article  {
+		  float: right;
+		  width: @chartWidth;
+		  height: @contentHeight;
+		}
+		
+	}// eof section
+	
+	footer {
+	  background-color: @footerBgColor;
+	  color: black;
+	  clear: both;
+	  text-align: right;
+ 	  width:  @contentWidth -2*@pad;
+ 	  height:  @footerHeight;
+	  padding: @pad;
+	  #plot_button {
+	    float: left;
+		  }
+	}// eof footer
+
+}// eof body

@@ -1,0 +1,34 @@
+@*************************************************************************
+ * Play Scala template: index                                            *
+ *                                                                       *
+ * @param fxRates  reference rates                                       *
+ * @param fxDates  date points                                           *
+ * @param currList currency list                                         *
+ * @param subject  "Reference Rates"                                     *
+ * @param name     "European Central Bank"                               *
+ * @param from     start date                                            *
+ * @param to       end date                                              *
+ *************************************************************************@
+@(fxRates: Array[Array[Double]], fxDates: Array[Array[Int]], 
+	currList: List[String], subject: String, name: String, 
+	from: String, to: String)
+
+@main(fxRates, fxDates, currList, name) {
+	<header>@subject between @from and @to</header>
+	<section id="content">
+		<nav>
+			<h5>Currency</h5>
+			<!--Input element with drop-down list-->
+			<select id="currency" size="23" multiple="yes">
+			  @currList.map{c =><option value="@c">@c</option>}  
+			</select>
+		</nav>
+	  <article>
+	  	<div id="placeholder"></div>
+	  </article>
+  </section>
+  <footer>			
+    <input type="button" value="Plot" id="plot_button" onclick="action()"/>
+		@copyleft()
+  </footer>
+}
